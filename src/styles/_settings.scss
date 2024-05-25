@@ -1,0 +1,73 @@
+//importation des fonts
+@layer base {
+    $font-path: './../assets/fonts/';
+
+    $font-weights: ('Extralight': 200,
+            'Light': 300,
+            'Regular': 400,
+            'Medium': 500,
+            'Semibold': 600,
+            'Bold': 700,
+        );
+
+    $default-font-weight: 400;
+
+    @each $variant,
+    $weight in $font-weights {
+        @font-face {
+            font-family: 'GeneralSans-#{$variant}';
+            src: url('#{$font-path}GeneralSans-#{$variant}.woff2') format('woff2'),
+            url('#{$font-path}GeneralSans-#{$variant}.woff') format('woff'),
+            url('#{$font-path}GeneralSans-#{$variant}.ttf') format('truetype');
+            font-weight: if($weight, $weight, $default-font-weight);
+            font-display: swap;
+            font-style: normal;
+        }
+    }
+
+    @font-face {
+        font-family: 'CalSans-SemiBold';
+        src: url('#{$font-path}CalSans-SemiBold.woff2') format('woff2'),
+        url('#{$font-path}CalSans-SemiBold.woff') format('woff'),
+        url('#{$font-path}CalSans-SemiBold.ttf') format('truetype');
+        font-display: swap;
+        font-style: italic;
+    }
+
+    .general-sans-regular {
+        font-family: 'GeneralSans-Regular', sans-serif;
+    }
+
+    .general-sans-medium {
+        font-family: 'GeneralSans-Medium', sans-serif;
+    }
+
+    .general-sans-semibold {
+        font-family: 'GeneralSans-Semibold', sans-serif;
+    }
+
+    .general-sans-bold {
+        font-family: 'GeneralSans-Bold', sans-serif;
+    }
+
+    .calSans {
+        font-family: 'CalSans-SemiBold', sans-serif;
+    }
+
+}
+
+//Styles globales
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'GeneralSans-Medium', sans-serif;
+}
+
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100vh;
+}

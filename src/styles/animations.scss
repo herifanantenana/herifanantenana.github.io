@@ -1,0 +1,45 @@
+.transition-ml {
+    transition: margin-left 1s ease-in-out;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rotate {
+    animation: rotate 0.3s ease-in-out;
+}
+
+.rotate-respons {
+    transform: rotate(-275deg);
+}
+
+.sticky-open {
+    transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    height: 100%;
+}
+
+.sticky-close {
+    transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    height: max-content;
+}
+
+.open-menu {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.close-menu {
+    display: none;
+    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow: hidden;
+    padding: 0;
+}
